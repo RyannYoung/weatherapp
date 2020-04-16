@@ -1,0 +1,41 @@
+{
+    "coord": {
+        "lon": 148.92,
+        "lat": -34.85
+    },
+    "weather": [{
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04n"
+    }],
+    "base": "stations",
+    "main": {
+        "temp": 14.24,
+        "feels_like": 12.62,
+        "temp_min": 12.22,
+        "temp_max": 16,
+        "pressure": 1019,
+        "humidity": 72
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.1,
+        "deg": 30
+    },
+    "clouds": {
+        "all": 80
+    },
+    "dt": 1586953102,
+    "sys": {
+        "type": 1,
+        "id": 9588,
+        "country": "AU",
+        "sunrise": 1586896056,
+        "sunset": 1586936441
+    },
+    "timezone": 36000,
+    "id": 2142412,
+    "name": "Yass",
+    "cod": 200
+}

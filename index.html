@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+
+    <!-- Custom Stylesheet-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/717af7c90b.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <ul class="nav">
+                <li class="nav-item">The Weatherman!</li>
+                <li class="nav-item">Current</li>
+                <li class="nav-item">Location</li>
+                <li class="nav-item">About</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="background"></div>
+
+    <div class="container-weather">
+        <div class="weather-details">
+            <h1 class="description">Welcome!</i>
+                <span class="description-flavour">Looks like you're in for a cold one today!</span>
+                <hr />
+            </h1>
+            <span class="text">Here's some stats I found just for you!</span>
+            <ul class="weather-list">
+                <li class="weather-item">Weather:
+                    <span class="main"></span>
+                    <sup class="id"></sup>
+                </li>
+                <li class="weather-item">Description: <span class="wdescription"></span></li>
+                <li class="weather-item">Temperature: <span class="temperature"></span></li>
+                <li class="weather-item">Feels like: <span class="feels-like"></span></li>
+                <li class="weather-item">Temp Minimum: <span class="temp-min"></span></li>
+                <li class="weather-item">Temp Maximum: <span class="temp-max"></span></li>
+                <li class="weather-item">Pressure: <span class="pressure"></span></li>
+                <li class="weather-item">Humidity: <span class="humidity"></span></li>
+                <li class="weather-item">Visibility: <span class="visibility"></span></li>
+                <li class="weather-item">Wind:
+                    <span class="windspeed"></span>
+                    <span class="winddeg"></span>
+                </li>
+                <li class="weather-item">Cloud Density: <span class="cloud-density"></span></li>
+                <li class="weather-item">Time Calculated: <span class="daytime"></span></li>
+                <li class="weather-item">Country: <span class="country"></span></li>
+                <li class="weather-item">Sunrise: <span class="sunrise"></span></li>
+                <li class="weather-item">Sunset: <span class="sunset"></span></li>
+                <li class="weather-item">Timezone: <span class="timezone"></span></li>
+                <li class="weather-item">City ID: <span class="city-id"></span></li>
+                <li class="weather-item">City Name: <span class="city-name"></span></li>
+            </ul>
+            </ul>
+        </div>
+        <div class="weather-summary">
+            <div class="weather-icons">
+                <div class="weather-icon"></div>
+            </div>
+            <span class="weather-statement"></span>
+            <div id="map">
+            </div>
+            <div class="map-description"><span>Click on anywhere in the map to check it's weather information!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="js/script.js" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrolMeeQ1-0uJ4x2tr9oYeUSdbAGXcuIA">
+    </script>
+</body>
+
+</html>
