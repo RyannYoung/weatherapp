@@ -82,6 +82,8 @@ function loadJson(url) {
         $(".winddeg").text(w.wind.deg + "°");
         $(".cloud-density").text(w.clouds.all + "%");
 
+        $("#location-text").text(`Here's the weather information I found for ${w.name}!`)
+
 
         $(".daytime").text(convertTime(w.dt));
         $(".country").text(w.sys.country);
@@ -154,7 +156,14 @@ function loadJson(url) {
                 break;
         }
 
-        // Post the image
+        const location = w.name.toLowerCase()
+        const data1 = w.name.toUpperCase()
+        const weather = "WEATHER"
+
+        console.log(location, data1, weather)
+
+        // reload the weather bar
+        loadWeatherBar(location, data1, weather)
 
 
     });
@@ -168,3 +177,23 @@ function convertTime(time) {
     var formattedTime = hours + ":" + mins.substr(-2) + ":" + seconds.substr(-2);
     return formattedTime;
 }
+
+/**
+ * Weather Bar
+ */
+
+function loadWeatherBar(location, data1, data2) {
+    var weatherbar = $(`<a class="weatherwidget-io" href="https://forecast7.com/en/n34d83148d91/${location}/" data-label_1="${data1}" data-label_2="${data2}" data-theme="original" >${data1} WEATHER</a>`)
+    const weatherbarContainer = $('#weatherwidget');
+    weatherbarContainer.append(weatherbar);
+
+    !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0];
+        if(!d.getElementById(id)){js=d.createElement(s);
+           js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';
+           fjs.parentNode.insertBefore(js,fjs);
+     }
+    }
+    (document,'script','weatherwidget-io-js');
+}
+

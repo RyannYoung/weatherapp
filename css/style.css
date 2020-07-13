@@ -5,11 +5,28 @@
 /* !DEFAULT VARIABLES */
 
 :root {
+
+
+    /* !Custom CSS Variables */
+    --primary-color: #0F2B3A;
+    --primary-color-light: #8bf6ff;
+    --primary-color-dark: #1F567C;
+
+    --secondary-color: #0F2B3A;
+    --secondary-color-light: #e6ffff;
+    --secondary-color-dark: #82b3c9;
+
+    --primary-font: 'Roboto', sans-serif;
+    --secondary-font: 'Open sans', sans-serif;
+
+    --background-color-primary: #F5F5F5;
+
     padding: 0;
     margin: 0;
     font-size: 16px;
-    font-family: 'Open sans', sans-serif;
+    font-family: var(--primary-font);
     color: white;
+
 }
 
 body {
@@ -18,61 +35,54 @@ body {
 }
 
 /* Navigation Bar */
-
 .navbar {
-    position: absolute;
     width: 80vw;
     top: 0;
     left: 0;
     overflow: hidden;
-    background-color: #7484A0;
+    background-color: var(--primary-color);
     padding-left: 10%;
     padding-right: 10%;
-    box-shadow: 0 4px 2px #111;
+    box-shadow: 0 4px 2px var(--primary-color);
 
 }
 
 .nav {
-    list-style-type: none;
     padding: 0 1em 0 1em;
-    height: 6vh;
-    line-height: 6vh;
     margin: 0;
     /* Flex */
     display: flex;
 }
 
-.nav-item:first-child {
-    margin-right: auto;
-    letter-spacing: 0.1em;
-    margin-left: 0;
-    width: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 2em;
-    background-color: #B38A76;
-    border-radius: 12px;
-}
-
-.nav-item {
+#nav-divider {
+    background-color: rgb(21, 58, 78);
+    padding: 8px;
     display: block;
-    font-family: 'Bangers', cursive;
-    text-shadow: 0 3px 3px #111;
-    height: 100%;
-    width: 6em;
-    text-align: center;
-    color: white;
-    margin-left: 0.2em;
-    background-color: #B38A76;
-
-
-    font-size: 1.6em;
-    letter-spacing: 0.2em;
+    margin: 0;
+    border: none;
 }
+
+.nav-item:first-child {
+    margin: 24px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 0 4px 2px #111;
+}
+
+#weather-explanation {
+    text-align: center;
+    color: #878787;
+    margin: 1em;
+}
+
 
 .background {
+    background-color: var(--background-color-primary);
     position: absolute;
-    background-image: url("/assets/background3.jpg");
     height: 100vh;
     width: 100vw;
     background-position: center;
@@ -84,60 +94,61 @@ body {
 
 .container-weather {
     position: relative;
-    height: 75vh;
+    height: 100%;
     width: 75vw;
     /* background-color: wheat; */
-    top: 12.5vh;
-    left: 12.5vw;
+    margin-left: auto;
+    margin-right: auto;
 
     display: flex;
 }
 
 .weather-details {
     width: 100%;
-    padding: 2em;
-    background-color: #7484A0;
-    border-radius: 12px;
-    margin-right: 2em;
+    background-color: var(--primary-color-dark);
+    border: none;
     box-shadow: 0 4px 2px #111;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .description {
-    font-size: 4em;
-    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 2em;
     text-shadow: 0 2px 2px #111;
-    letter-spacing: 0.1em;
+    margin: 0.5em 1em;
+    font-family: 'Kaushan Script', cursive;
     color: white;
 }
 
-.description>span {
+.description-flavour {
+    margin: 1em;
     font-family: 'Open sans';
     letter-spacing: 0;
-    margin-bottom: 1em;
+    font-size: 0.6em;
 }
 
 .weather-item {
+    width: 40%;
+    padding-left: 10%;
+    list-style: none;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     letter-spacing: 0.05em;
     min-width: 0;
-    line-height: 0.6em;
-    font-size: 1.2em;
-    font-weight: 600;
+    font-size: 1em;
+    text-shadow: 0 2px 2px #111;
 }
 
 .weather-item>span {
-    font-weight: 400;
+    font-size: 0.8em;
 }
 
 .weather-summary {
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background-color: #7484A0;
-    border-radius: 12px;
+    background-color: var(--primary-color-dark);
     margin-left: 2em;
     box-shadow: 0 4px 2px #111;
     display: flex;
@@ -147,32 +158,28 @@ body {
 }
 
 .weather-svg {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
 
-.description-flavour {
-    display: block;
-    font-size: 0.3em;
-    padding-top: 1em;
-}
-
 .text {
     display: block;
-    font-size: 1.8em;
-    letter-spacing: 0.2em;
-    margin-bottom: 0.4em;
-    font-family: 'Bangers', cursive;
-    text-shadow: 0 4px 2px #111;
+    margin: 0.5em auto;
+    font-family: 'Open sans';
+    letter-spacing: 0;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 0 2px 2px #111;
 }
 
 .weather-statement {
-    font-size: 1.8em;
-    font-family: 'Bangers', cursive;
-    letter-spacing: 0.1em;
-    text-align: center;
-
+    display: block;
+    margin: 0.5em auto;
+    font-family: 'Kaushan Script', cursive;
+    letter-spacing: 0;
+    font-size: 2em;
+    text-shadow: 0 2px 2px #111;
 }
 
 .map-description {
@@ -182,31 +189,23 @@ body {
 }
 
 #map {
-    height: 50%;
-    width: 80%;
+    height: 550px;
+    width: 90%;
     margin: 1em;
     border-radius: 12px;
     background-color: white;
 }
 
-hr {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    border-width: 3px;
-}
 
 .weather-list {
     display: flex;
-    list-style-type: square;
-    list-style-position: inside;
     min-width: 0;
-    /* background-color: gold; */
     flex-wrap: wrap;
     justify-content: start;
-    height: 60%;
     max-width: 100%;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    margin: 1em;
 }
 
 sup {
@@ -215,9 +214,8 @@ sup {
 }
 
 .weather-icons {
-    height: 40%;
-    width: 80%;
-    margin-top: 2em;
+    display: inline;
+    margin-right: auto;
 }
 
 @media (max-width: 1300px) {
@@ -229,9 +227,8 @@ sup {
 @media (max-width: 1000px) {
 
     .container-weather {
-        margin-top: 5em;
+        margin-top: 1em;
         flex-direction: column;
-        height: 125em;
         width: auto;
         position: relative;
         top: 0;
@@ -241,7 +238,6 @@ sup {
         justify-content: center;
     }
 
-    .map {}
 
     .background {
         position: fixed;
@@ -263,7 +259,6 @@ sup {
         margin: 1em;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
     }
 
     .weather-details {
